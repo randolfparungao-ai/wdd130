@@ -1,59 +1,91 @@
-/* 1. Add Nav Styling */
-nav {
-    background-color: #333; /* You can choose your own color */
-    padding: 1rem;
+/* Universal Selector - Reset defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Ensures padding doesn't break width */
 }
 
-/* 2. Add Nav Link Styling */
+/* Navigation */
+nav {
+    background-color: #333;
+    padding: 1rem;
+    text-align: center;
+}
+
 nav a {
     color: #fff;
     padding: 0.5rem 1rem;
-    display: block; /* Makes the entire area clickable and stacks them on mobile */
     text-decoration: none;
+    display: inline-block;
 }
 
-/* 3. Add Heading Color */
+/* Main Layout */
+main {
+    max-width: 840px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 h1 {
-    color: #0056b3; /* Choose a color that fits your design */
+    color: #0056b3;
+    margin-bottom: 1rem;
 }
 
-/* 4. Update Main Img (Profile Picture) */
-/* The audit requires: width, height, border, padding, and box-shadow */
-main img {
+/* Floating the profile image */
+.profile {
     width: 150px;
     height: auto;
+    float: right;
+    /* */
+    margin-left: 20px;
     border: 1px solid #ccc;
     padding: 5px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* --- KEEP YOUR EXISTING PASSING RULES BELOW --- */
-
-main {
-    max-width: 840px;
+/* Class Selector .box */
+.box {
+    clear: both;
+    /* Fixes overlap with floated image */
+    margin: 1rem auto;
+    border: 1px solid rgb(0 0 0 / 10%);
+    padding: 1rem;
+    background-color: #ddd;
+    color: #000;
 }
 
+/* Aside Styling & Centering Map */
 aside {
-    width: 20rem;
-    margin: 1rem;
-    border: 1px solid rgb(0 0 0 / 0.2);
-    padding: 1rem;
-    background-color: #eee;
-    color: #333;
+    width: 25rem;
     text-align: center;
+    position: relative;
+    /* Anchor for absolute overlay */
+    margin: 2rem auto;
+    /* Centers the map horizontally */
 }
 
 aside img {
-    width: 200px;
+    width: 100%;
     height: auto;
+    display: block;
 }
 
-p {
-    padding: 0;
+/* Absolute Position Overlay for the H2 */
+aside h2 {
+    position: absolute;
+    top: 20px;
+    /* Adjust as needed for your image */
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
 }
 
+/* Footer */
 footer {
-    margin-top: 15px;
+    margin-top: 30px;
+    padding: 20px;
     border-top: 1px solid #000;
     text-align: center;
+    clear: both;
 }
