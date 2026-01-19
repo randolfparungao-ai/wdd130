@@ -1,15 +1,38 @@
-/* Limit the width of the main content */
+/* 1. Add Nav Styling */
+nav {
+    background-color: #333; /* You can choose your own color */
+    padding: 1rem;
+}
+
+/* 2. Add Nav Link Styling */
+nav a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    display: block; /* Makes the entire area clickable and stacks them on mobile */
+    text-decoration: none;
+}
+
+/* 3. Add Heading Color */
+h1 {
+    color: #0056b3; /* Choose a color that fits your design */
+}
+
+/* 4. Update Main Img (Profile Picture) */
+/* The audit requires: width, height, border, padding, and box-shadow */
+main img {
+    width: 150px;
+    height: auto;
+    border: 1px solid #ccc;
+    padding: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* --- KEEP YOUR EXISTING PASSING RULES BELOW --- */
+
 main {
     max-width: 840px;
 }
 
-/* Style for your profile picture in main */
-main img {
-    width: 150px;
-    height: auto;
-}
-
-/* Sidebar styling */
 aside {
     width: 20rem;
     margin: 1rem;
@@ -20,18 +43,15 @@ aside {
     text-align: center;
 }
 
-/* Style for the state/country image in the aside */
 aside img {
     width: 200px;
     height: auto;
 }
 
-/* General paragraph reset */
 p {
     padding: 0;
 }
 
-/* Footer distinction */
 footer {
     margin-top: 15px;
     border-top: 1px solid #000;
