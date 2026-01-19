@@ -1,0 +1,39 @@
+/* Limit the width of the main content */
+main {
+    max-width: 840px;
+}
+
+/* Style for your profile picture in main */
+main img {
+    width: 150px;
+    height: auto;
+}
+
+/* Sidebar styling */
+aside {
+    width: 20rem;
+    margin: 1rem;
+    border: 1px solid rgb(0 0 0 / 0.2);
+    padding: 1rem;
+    background-color: #eee;
+    color: #333;
+    text-align: center;
+}
+
+/* Style for the state/country image in the aside */
+aside img {
+    width: 200px;
+    height: auto;
+}
+
+/* General paragraph reset */
+p {
+    padding: 0;
+}
+
+/* Footer distinction */
+footer {
+    margin-top: 15px;
+    border-top: 1px solid #000;
+    text-align: center;
+}
