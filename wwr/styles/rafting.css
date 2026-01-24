@@ -23,7 +23,8 @@ body {
 header,
 main,
 footer {
-    width: 840px;
+    max-width: 840px;
+    /* Use max-width instead of width */
     margin: 0 auto;
 }
 
@@ -67,8 +68,11 @@ article {
     top: 150px;
     left: 50px;
     right: 50px;
-    background-color: rgba(233, 196, 106, 0.8);
+    background-color: var(--accent2-color);
+    /* Change this from the rgba color to the variable */
     padding: 20px;
+    opacity: 0.9;
+    /* Add this if you still want it slightly see-through */
 }
 
 .hero article img {
