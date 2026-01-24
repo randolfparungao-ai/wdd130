@@ -112,3 +112,35 @@ nav a {
 .socialmedia a {
     text-decoration: none;
 }
+
+/* Header and Navigation Layout */
+header {
+    display: grid;
+    grid-template-columns: 150px auto;
+    align-items: center;
+    padding: 10px;
+}
+
+header img {
+    width: 100px;
+}
+
+nav ul {
+    list-style-type: none;
+    /* Removes the bullet points */
+    display: flex;
+    /* Makes the list horizontal */
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
