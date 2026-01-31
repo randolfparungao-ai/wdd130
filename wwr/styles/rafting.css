@@ -8,7 +8,7 @@
     --body-font: Arial, sans-serif;
 }
 
-/* Reset */
+/* Reset - Mandatory Step */
 * {
     margin: 0;
     padding: 0;
@@ -20,11 +20,11 @@ body {
     color: var(--accent1-color);
 }
 
+/* Page Layout - Fixed width as requested by instructions */
 header,
 main,
 footer {
-    max-width: 840px;
-    /* Use max-width instead of width */
+    width: 840px;
     margin: 0 auto;
 }
 
@@ -45,6 +45,7 @@ article {
 /* Hero Section Styles */
 .hero {
     position: relative;
+    /* Essential for absolute positioning of children */
 }
 
 .hero img {
@@ -59,7 +60,8 @@ article {
     width: 100%;
     padding: 16px;
     text-align: center;
-    background-color: rgba(38, 70, 83, 0.7);
+    opacity: 0.7;
+    background-color: var(--accent1-color);
     color: #fff;
 }
 
@@ -69,10 +71,8 @@ article {
     left: 50px;
     right: 50px;
     background-color: var(--accent2-color);
-    /* Change this from the rgba color to the variable */
     padding: 20px;
     opacity: 0.9;
-    /* Add this if you still want it slightly see-through */
 }
 
 .hero article img {
@@ -81,70 +81,40 @@ article {
     margin-left: 15px;
 }
 
-/* Footer Social Icons */
+/* Header & Navigation */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Footer & Social Media */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
 .socialmedia {
     display: flex;
-    justify-content: center;
-    margin-top: 10px;
 }
 
 .socialmedia img {
     width: 32px;
+    /* Standard size for social icons */
     height: auto;
-    margin: 0 10px;
+    margin-left: 10px;
 }
 
-/* Navigation List Styling */
-nav ul {
-    list-style-type: none;
-    /* Removes the bullet points */
-    display: flex;
-    /* Makes the list horizontal */
-    justify-content: space-around;
-    /* Spreads the links out */
-    padding: 10px 0;
-}
-
-nav a {
-    text-decoration: none;
-    /* Removes underlines */
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-/* Remove underlines from social media image links */
 .socialmedia a {
     text-decoration: none;
-}
-
-/* Header and Navigation Layout */
-header {
-    display: grid;
-    grid-template-columns: 150px auto;
-    align-items: center;
-    padding: 10px;
-}
-
-header img {
-    width: 100px;
-}
-
-nav ul {
-    list-style-type: none;
-    /* Removes the bullet points */
-    display: flex;
-    /* Makes the list horizontal */
-    justify-content: space-around;
-}
-
-nav a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: bold;
-    padding: 10px;
-}
-
-nav a:hover {
-    color: var(--secondary-color);
-    text-decoration: underline;
+    /* Removes underlines per instructions */
 }
