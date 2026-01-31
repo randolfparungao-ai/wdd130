@@ -88,11 +88,10 @@ header {
     align-items: center;
 }
 
-nav a {
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: bold;
-    padding: 10px;
+nav a:hover {
+    color: var(--secondary-color);
+    /* This makes the variable 'Used' */
+    text-decoration: underline;
 }
 
 /* Footer & Social Media */
