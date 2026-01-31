@@ -90,7 +90,7 @@ header {
 
 nav a:hover {
     color: var(--secondary-color);
-    /* This makes the variable 'Used' */
+    /* This makes the variable 'used' */
     text-decoration: underline;
 }
 
