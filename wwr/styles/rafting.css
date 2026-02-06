@@ -14,8 +14,11 @@
 }
 
 body {
+
     font-family: 'Segoe UI', Arial, sans-serif;
     color: var(--text-color);
+    background-color: var(--white);
+    /* This uses the variable and clears the error */
 }
 
 /* --- HEADER & NAV --- */
@@ -101,6 +104,23 @@ nav {
     height: auto;
     border: 4px solid var(--primary-color);
     margin: 0 auto;
+}
+
+.socialmedia a {
+    text-decoration: none;
+}
+
+/* FIX: Forces icons to be visible and correctly sized */
+.socialmedia img {
+    width: 30px;
+    height: auto;
+}
+
+/* Optional: Layout for the icons to match your wireframe */
+.socialmedia {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
 }
 
 /* --- ADVENTURE GALLERY (5-Column Flex) --- */
