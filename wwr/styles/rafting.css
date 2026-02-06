@@ -1,119 +1,116 @@
-/* Variables */
-:root {
-    --primary-color: #055a05;
-    --secondary-color: #f4a261;
-    --accent1-color: #264653;
-    --accent2-color: #e9c46a;
-    --heading-font: "Times New Roman", serif;
-    --body-font: Arial, sans-serif;
-}
-
-/* Reset - Mandatory Step */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: var(--body-font);
-    color: var(--accent1-color);
-}
-
-/* Page Layout - Fixed width as requested by instructions */
-header,
-main,
-footer {
-    width: 840px;
-    margin: 0 auto;
-}
-
-h1,
-h2 {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-}
-
-nav,
-p,
-section,
-article {
-    margin: 16px;
-    padding: 8px;
-}
-
-/* Hero Section Styles */
-.hero {
-    position: relative;
-    /* Essential for absolute positioning of children */
-}
-
-.hero img {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.hero h1 {
-    position: absolute;
-    top: 20px;
-    width: 100%;
-    padding: 16px;
-    text-align: center;
-    opacity: 0.7;
-    background-color: var(--accent1-color);
-    color: #fff;
-}
-
-.hero article {
-    position: absolute;
-    top: 150px;
-    left: 50px;
-    right: 50px;
-    background-color: var(--accent2-color);
-    padding: 20px;
-    opacity: 0.9;
-}
-
-.hero article img {
-    float: right;
-    width: 125px;
-    margin-left: 15px;
-}
-
-/* Header & Navigation */
+/* --- Header & Nav (Grid + Flex) --- */
 header {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+    background-color: #d1c4e9;
+    padding: 20px 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+nav a {
+    background-color: #fff;
+    border: 1px solid #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* --- Hero Section: Text Left, Small Pic Right --- */
+.hero-container {
+    text-align: center;
+    padding: 20px 5%;
+}
+
+.hero-box {
+    display: flex;
+    /* Lines up text and image side-by-side */
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #333;
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #fff;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 2;
+    /* Gives the text more space than the image */
+}
+
+.hero-side-img {
+    flex: 1;
+    /* Makes the image take up less space */
+    max-width: 300px;
+    /* Limits the size of the pic on the side */
+    height: auto;
+    border: 1px solid #ccc;
+}
+
+/* --- History Section: 3-Column Grid --- */
+.history-container {
+    background-color: #f4f4f4;
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.history-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* Text - Image - Text */
+    gap: 20px;
+    align-items: center;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.history-img {
+    width: 100%;
+    border: 5px solid #311b92;
+}
+
+/* --- Adventures Section --- */
+.adventure-flex {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    padding: 0 5%;
 }
 
-nav a:hover {
-    color: var(--secondary-color);
-    /* This makes the variable 'used' */
-    text-decoration: underline;
+.adventure-flex figure {
+    flex: 1;
 }
 
-/* Footer & Social Media */
+.adventure-flex img {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+/* --- Footer --- */
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 0;
+    padding: 20px 5%;
+    background-color: #d1c4e9;
 }
 
-.socialmedia {
+.social-links {
     display: flex;
+    gap: 10px;
 }
 
-.socialmedia img {
-    width: 32px;
-    /* Standard size for social icons */
-    height: auto;
-    margin-left: 10px;
-}
-
-.socialmedia a {
-    text-decoration: none;
-    /* Removes underlines per instructions */
+.social-links img {
+    width: 35px;
+    background: #fff;
+    padding: 5px;
 }
