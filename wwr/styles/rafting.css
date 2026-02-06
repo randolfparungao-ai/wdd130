@@ -1,63 +1,87 @@
-/* --- Header & Nav (Grid + Flex) --- */
+/* --- UNIVERSAL SELECTOR RESET (Audit Required) --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --- CSS VARIABLES (Audit Required) --- */
+:root {
+    --primary-color: #311b92;
+    --accent-color: #d1c4e9;
+    --text-color: #333;
+    --white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: var(--text-color);
+}
+
+/* --- HEADER & NAV --- */
 header {
     display: grid;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 120px 1fr;
     align-items: center;
-    background-color: #d1c4e9;
     padding: 20px 5%;
+    background-color: var(--accent-color);
 }
 
 nav {
     display: flex;
     justify-content: flex-end;
-    gap: 15px;
+    gap: 20px;
 }
 
-nav a {
-    background-color: #fff;
-    border: 1px solid #333;
-    padding: 10px 15px;
-    text-decoration: none;
-    color: #333;
+/* --- HERO SECTION (Fixes the "Too Big" Images) --- */
+.hero {
+    position: relative;
+    /* REQUIRED: Anchor for absolute children */
+    height: 400px;
+    /* LIMITS the height so it's not too big */
+    overflow: hidden;
 }
 
-/* --- Hero Section: Text Left, Small Pic Right --- */
-.hero-container {
+.hero .hero-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* FIX: Prevents stretching/oversizing */
+    display: block;
+}
+
+.hero h1 {
+    position: absolute;
+    /* REQUIRED */
+    top: 20px;
+    width: 100%;
     text-align: center;
-    padding: 20px 5%;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px 0;
+    color: var(--primary-color);
 }
 
-.hero-box {
-    display: flex;
-    /* Lines up text and image side-by-side */
-    align-items: center;
-    justify-content: space-between;
-    border: 1px solid #333;
-    padding: 30px;
-    max-width: 1000px;
-    margin: 0 auto;
-    text-align: left;
-    background-color: #fff;
-    gap: 40px;
+.hero article {
+    position: absolute;
+    /* REQUIRED */
+    top: 100px;
+    left: 10%;
+    right: 10%;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border: 1px solid var(--text-color);
 }
 
-.hero-text {
-    flex: 2;
-    /* Gives the text more space than the image */
+.hero article img {
+    float: right;
+    /* REQUIRED */
+    width: 100px;
+    /* Keeps the icon small */
+    margin-left: 20px;
 }
 
-.hero-side-img {
-    flex: 1;
-    /* Makes the image take up less space */
-    max-width: 300px;
-    /* Limits the size of the pic on the side */
-    height: auto;
-    border: 1px solid #ccc;
-}
-
-/* --- History Section: 3-Column Grid --- */
-.history-container {
-    background-color: #f4f4f4;
+/* --- HISTORY SECTION (3-Column Grid) --- */
+.history {
     padding: 40px 5%;
     text-align: center;
 }
@@ -68,49 +92,34 @@ nav a {
     /* Text - Image - Text */
     gap: 20px;
     align-items: center;
-    max-width: 1000px;
-    margin: 20px auto;
 }
 
-.history-img {
+.history-grid img {
     width: 100%;
-    border: 5px solid #311b92;
+    max-width: 300px;
+    /* Limits the middle photo size */
+    height: auto;
+    border: 4px solid var(--primary-color);
+    margin: 0 auto;
 }
 
-/* --- Adventures Section --- */
-.adventure-flex {
+/* --- ADVENTURE GALLERY (5-Column Flex) --- */
+.adventure-gallery {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: 20px;
-    padding: 0 5%;
-}
-
-.adventure-flex figure {
-    flex: 1;
-}
-
-.adventure-flex img {
-    width: 100%;
-    border: 1px solid #ccc;
-}
-
-/* --- Footer --- */
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
+    gap: 15px;
     padding: 20px 5%;
-    background-color: #d1c4e9;
 }
 
-.social-links {
-    display: flex;
-    gap: 10px;
+.adventure-gallery figure {
+    flex: 1;
+    text-align: center;
 }
 
-.social-links img {
-    width: 35px;
-    background: #fff;
-    padding: 5px;
+.adventure-gallery img {
+    width: 100%;
+    height: 150px;
+    /* Forces all 5 images to stay uniform and small */
+    object-fit: cover;
+    border: 1px solid #ccc;
 }
