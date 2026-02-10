@@ -1,11 +1,11 @@
-/* --- UNIVERSAL SELECTOR RESET (Audit Required) --- */
+/* --- UNIVERSAL SELECTOR RESET --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* --- CSS VARIABLES (Audit Required) --- */
+/* --- CSS VARIABLES --- */
 :root {
     --primary-color: #311b92;
     --accent-color: #d1c4e9;
@@ -14,11 +14,9 @@
 }
 
 body {
-
     font-family: 'Segoe UI', Arial, sans-serif;
     color: var(--text-color);
     background-color: var(--white);
-    /* This uses the variable and clears the error */
 }
 
 /* --- HEADER & NAV --- */
@@ -36,12 +34,16 @@ nav {
     gap: 20px;
 }
 
-/* --- HERO SECTION (Fixes the "Too Big" Images) --- */
+nav a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* --- HERO SECTION (WEEK 4) --- */
 .hero {
     position: relative;
-    /* REQUIRED: Anchor for absolute children */
     height: 400px;
-    /* LIMITS the height so it's not too big */
     overflow: hidden;
 }
 
@@ -54,7 +56,6 @@ nav {
 
 .hero h1 {
     position: absolute;
-    /* REQUIRED */
     top: 20px;
     width: 100%;
     text-align: center;
@@ -65,7 +66,6 @@ nav {
 
 .hero article {
     position: absolute;
-    /* REQUIRED */
     top: 100px;
     left: 10%;
     right: 10%;
@@ -76,13 +76,11 @@ nav {
 
 .hero article img {
     float: right;
-    /* REQUIRED */
     width: 100px;
-    /* Keeps the icon small */
     margin-left: 20px;
 }
 
-/* --- HISTORY SECTION (3-Column Grid) --- */
+/* --- HISTORY SECTION (WEEK 4) --- */
 .history {
     padding: 40px 5%;
     text-align: center;
@@ -91,7 +89,6 @@ nav {
 .history-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    /* Text - Image - Text */
     gap: 20px;
     align-items: center;
 }
@@ -99,28 +96,12 @@ nav {
 .history-grid img {
     width: 100%;
     max-width: 300px;
-    /* Limits the middle photo size */
     height: auto;
     border: 4px solid var(--primary-color);
     margin: 0 auto;
 }
 
-.socialmedia a {
-    text-decoration: none;
-}
-
-/ Forces icons to be visible and correctly sized */ .socialmedia img {
-    width: 30px;
-    height: auto;
-}
-
-/ Layout for the icons to match your wireframe */ .socialmedia {
-    display: flex;
-    justify-content: flex-end;
-    gap: 15px;
-}
-
-/* --- ADVENTURE GALLERY (5-Column Flex) --- */
+/* --- ADVENTURE GALLERY (WEEK 4) --- */
 .adventure-gallery {
     display: flex;
     justify-content: space-around;
@@ -140,13 +121,12 @@ nav {
     border: 1px solid #ccc;
 }
 
+/* --- CONTACT HEADER (WEEK 5) --- */
 .contact-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Centers items horizontally in the flex container */
     text-align: center;
-    /* Centers the actual text lines */
     padding: 40px 5%;
     background-color: #fcfcfc;
 }
@@ -156,11 +136,10 @@ nav {
     color: var(--primary-color);
 }
 
-/* --- SIDE-BY-SIDE LAYOUT --- */
+/* --- CONTACT LAYOUT: MAP LEFT, FORM RIGHT --- */
 .contact-grid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* Two equal columns */
     gap: 40px;
     padding: 20px 5%;
     max-width: 1200px;
@@ -173,25 +152,14 @@ nav {
     border: 1px solid var(--accent-color);
 }
 
-.employee-grid {
+/* --- FORM ITEMS & BUTTON --- */
+.form-item {
     display: flex;
-    justify-content: space-around;
-    gap: 20px;
-    padding: 40px 5%;
+    flex-direction: column;
+    margin-bottom: 15px;
+    text-align: left;
 }
 
-.employee-grid img {
-    width: 100%;
-    max-width: 280px;
-    height: 280px;
-    /* Forces uniform size */
-    object-fit: cover;
-    /* Prevents stretching/squashing */
-    border-radius: 8px;
-    border: 2px solid var(--primary-color);
-}
-
-/* --- BUTTON FIX --- */
 button[type="submit"] {
     padding: 15px;
     background-color: var(--primary-color);
@@ -200,33 +168,53 @@ button[type="submit"] {
     cursor: pointer;
     font-weight: bold;
     font-size: 1rem;
-    /* Ensure units like rem or px are present */
 }
 
-/* --- FOOTER FIX --- */
+/* --- EMPLOYEE SECTION --- */
+.team-section {
+    text-align: center;
+    padding: 40px 5%;
+    background-color: #f4f4f4;
+}
+
+.employee-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.employee-grid figure {
+    flex: 1;
+    text-align: center;
+}
+
+.employee-grid img {
+    width: 100%;
+    max-width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+}
+
+/* --- FOOTER & CONSOLIDATED SOCIAL MEDIA --- */
 footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 5%;
-    /* Ensure both values have units */
     background-color: var(--accent-color);
 }
 
-/* --- SOCIAL MEDIA FOOTER FIX --- */
+.socialmedia,
 .socialmedia a {
-    text-decoration: none;
-}
-
-/* Forces icons to be visible and correctly sized */
-.socialmedia img {
-    width: 30px;
-    height: auto;
-}
-
-/* Layout for the icons to match your wireframe */
-.socialmedia {
     display: flex;
     justify-content: flex-end;
     gap: 15px;
+    text-decoration: none;
+}
+
+.socialmedia img {
+    width: 32px;
+    height: auto;
 }
