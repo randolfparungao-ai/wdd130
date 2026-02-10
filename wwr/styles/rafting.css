@@ -110,14 +110,12 @@ nav {
     text-decoration: none;
 }
 
-/* FIX: Forces icons to be visible and correctly sized */
-.socialmedia img {
+/ Forces icons to be visible and correctly sized */ .socialmedia img {
     width: 30px;
     height: auto;
 }
 
-/* Optional: Layout for the icons to match your wireframe */
-.socialmedia {
+/ Layout for the icons to match your wireframe */ .socialmedia {
     display: flex;
     justify-content: flex-end;
     gap: 15px;
@@ -142,4 +140,77 @@ nav {
     /* Forces all 5 images to stay uniform and small */
     object-fit: cover;
     border: 1px solid #ccc;
+}
+
+.contact-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centers items horizontally in the flex container */
+    text-align: center;
+    /* Centers the actual text lines */
+    padding: 40px 5%;
+    background-color: #fcfcfc;
+}
+
+.contact-header h1 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* --- SIDE-BY-SIDE LAYOUT --- */
+.contact-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Two equal columns */
+    gap: 40px;
+    padding: 20px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 450px;
+    border: 1px solid var(--accent-color);
+}
+
+/* --- IMAGE FIXES (No more stretching!) --- */
+.employee-grid {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 40px 5%;
+}
+
+.employee-grid img {
+    width: 100%;
+    max-width: 280px;
+    height: 280px;
+    /* Forces uniform size */
+    object-fit: cover;
+    /* Prevents stretching/squashing */
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+}
+
+/* --- FOOTER: SOCIAL ON RIGHT --- */
+footer {
+    display: flex;
+    justify-content: space-between;
+    /* Text left, Social right */
+    align-items: center;
+    padding: 20px 5%;
+    background-color: var(--accent-color);
+}
+
+.socialmedia {
+    display: flex;
+    gap: 15px;
+}
+
+.socialmedia img {
+    width: 32px;
+    /* Fixes massive icons from video */
+    height: auto;
 }
