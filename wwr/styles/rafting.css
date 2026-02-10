@@ -213,13 +213,20 @@ footer {
     background-color: var(--accent-color);
 }
 
-.socialmedia {
-    display: flex;
-    gap: 15px;
-    /* Use px or rem */
+/* --- SOCIAL MEDIA FOOTER FIX --- */
+.socialmedia a {
+    text-decoration: none;
 }
 
+/* Forces icons to be visible and correctly sized */
 .socialmedia img {
-    width: 32px;
+    width: 30px;
     height: auto;
+}
+
+/* Layout for the icons to match your wireframe */
+.socialmedia {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
 }
